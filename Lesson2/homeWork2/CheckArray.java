@@ -57,7 +57,7 @@ public class CheckArray {
 
     private static int sumArray (String[][] arr) throws MyArraySizeException, MyArrayDataException {
         int lengthArr = 4;
-        int sum = 0;
+        int summ = 0;
 
         // Проверяем, что у массива 4 основных измерения (4 строки)
         if (arr.length != 4) {
@@ -73,12 +73,12 @@ public class CheckArray {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 try {
-                    sum += valueOf(arr[i][j]);
+                    summ += valueOf(arr[i][j]);
                 } catch (NumberFormatException e) {
                     throw new MyArrayDataException(String.format("В позиции [%d][%d] исходного массива не целое число %s.", i, j, arr[i][j]));
                 }
             }
         }
-        return sum;
+        return summ;
     }
 }
